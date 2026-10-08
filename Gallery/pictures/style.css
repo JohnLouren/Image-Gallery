@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+.gallery{
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.gallery img{
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.4s linear;
+}
+.gallery img:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 0 10px cyan, 0 0 20px rgb(247, 5, 214), 0 0 40px blueviolet;
+}
+.gallery:hover img:not(:hover) {
+  filter: blur(4px) grayscale(20%); /* Blurs and slightly fades out unhovered items */
+  opacity: 0.5; /* Makes the blur effect stand out even more */
+}
+
+/* 4. Optional: Slightly scale up the active hovered image to pop out */
+.gallery img:hover {
+  transform: scale(1.03);
+  filter: blur(0);
+  opacity: 1;
+}
